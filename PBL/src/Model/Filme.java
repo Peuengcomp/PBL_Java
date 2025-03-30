@@ -9,13 +9,20 @@ public class Filme extends MidiaAV
     private ArrayList<String> roteiro;
     private int duracao;
 
-    Filme(String titulo, int ano, String categoria, int avaliacao, LocalDate data, String titulo_original, String onde_assistir,
+    Filme(String titulo, int ano, Categoria categoria, String review, int avaliacao, LocalDate data, String titulo_original, String onde_assistir,
           ArrayList<String> elenco, ArrayList<String> roteiro, ArrayList<String> direcao, int duracao)
     {
-        super(titulo, ano, categoria, avaliacao, data, titulo_original, onde_assistir, elenco);
+        super(titulo, ano, categoria, review, avaliacao, data, titulo_original, onde_assistir, elenco);
         this.direcao = direcao;
         this.roteiro = roteiro;
         this.duracao = duracao;
+    }
+
+    public String toString()
+    {
+        return super.toString() + "Direção: " + this.direcao +
+                "\nRoteiro: " + this.roteiro +
+                "\nDuracao: " + this.duracao + "\n";
     }
 
     public ArrayList<String> getDirecao() {

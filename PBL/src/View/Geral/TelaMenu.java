@@ -1,13 +1,14 @@
-package View;
+package View.Geral;
 
-import Controller.iMenus;
+import View.Criacao.TelaCriacao;
+import View.Listar.TelaListar;
+import View.TelaBuscar;
 
 import java.util.Scanner;
 
-public class TelaMenu implements iMenus
+public class TelaMenu
 {
-    @Override
-    public void fazerTela()
+    public static void fazerTela(Scanner entrada)
     {
         int opc;
         do
@@ -17,20 +18,20 @@ public class TelaMenu implements iMenus
             System.out.println("2 - Buscar Midia");
             System.out.println("3 - Listar Midia");
             System.out.println("4 - Sair");
-            System.out.print("Escolha uma opcao: ");
+            System.out.print("Escolha uma opção: ");
 
-            opc = entrada();
+            opc = entrada.nextInt();
 
             switch (opc)
             {
                 case 1:
-                    System.out.println("Tela de criação");
+                    TelaCriacao.fazerTela(entrada);
                     break;
                 case 2:
-                    System.out.println("Tela de buscar");
+                    TelaBuscar.fazerTela(entrada);
                     break;
                 case 3:
-                    System.out.println("Tela de listar");
+                    TelaListar.fazerTela(entrada);
                     break;
                 case 4:
                     System.out.println("Sair");

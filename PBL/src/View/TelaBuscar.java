@@ -1,23 +1,21 @@
 package View;
 
-import Controller.iMenus;
+import java.util.Scanner;
 
-public class TelaBuscar implements iMenus
+public class TelaBuscar
 {
-    @Override
-    public void fazerTela()
+    public static void fazerTela(Scanner entrada)
     {
         int opc;
         do
         {
-            System.out.println("Bem vindo ao diário cultural: ");
             System.out.println("1 - Buscar Livro");
             System.out.println("2 - Buscar Filme");
             System.out.println("3 - Buscar Série");
             System.out.println("4 - Voltar");
             System.out.print("Escolha uma opcao: ");
 
-            opc = entrada();
+            opc = entrada.nextInt();
 
             switch (opc)
             {

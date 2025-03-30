@@ -6,17 +6,25 @@ public class Midia
 {
     private String titulo;
     private int ano;
-    private String categoria;
+    private Categoria genero;
+    private String review;
     private int avaliacao;
     private LocalDate data;
 
-    Midia(String titulo, int ano, String categoria, int avaliacao, LocalDate data)
+    Midia(String titulo, int ano, Categoria categoria, String review, int avaliacao, LocalDate data)
     {
         this.titulo = titulo;
         this.ano = ano;
-        this.categoria = categoria;
+        this.genero = categoria;
         this.avaliacao = avaliacao;
+        this.review = review;
         this.data = data;
+    }
+
+    public String toString()
+    {
+        return "Titulo: " + this.titulo + "\nAno: " + this.ano + "\nCategoria: " + this.genero.getCategoria() +
+                "\nData: " + this.data + "\nReview: " + this.review + "\n";
     }
 
     public String getTitulo() {
@@ -27,8 +35,13 @@ public class Midia
         return this.ano;
     }
 
-    public String getCategoria() {
-        return this.categoria;
+    public Categoria getCategoria() {
+        return this.genero;
+    }
+
+    public String getReview()
+    {
+        return this.review;
     }
 
     public int getAvaliacao() {
@@ -48,8 +61,13 @@ public class Midia
         this.ano = ano;
     }
 
-    public void setCategoria(String categoria) {
-        this.categoria = categoria;
+    public void setCategoria(Categoria categoria) {
+        this.genero = categoria;
+    }
+
+    public void setReview(String review)
+    {
+        this.review = review;
     }
 
     public void setAvaliacao(int avaliacao) {

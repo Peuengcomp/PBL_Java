@@ -1,35 +1,34 @@
-package View;
+package View.Criacao;
 
-import Controller.iMenus;
+import View.Criacao.Livros.TelaCriarLivro;
 
 import java.util.Scanner;
 
-public class TelaListar implements iMenus
+public class TelaCriacao
 {
-    @Override
-    public void fazerTela()
+    public static void fazerTela(Scanner entrada)
     {
         int opc;
         do
         {
-            System.out.println("1 - Listar Livros");
-            System.out.println("2 - Listar Filmes");
-            System.out.println("3 - Listar Séries");
+            System.out.println("1 - Criar Livro");
+            System.out.println("2 - Criar Filme");
+            System.out.println("3 - Criar Série");
             System.out.println("4 - Voltar");
-            System.out.print("Escolha uma opcao: ");
+            System.out.println("Escolha uma opcao: ");
 
-            opc = entrada();
+            opc = entrada.nextInt();
 
             switch (opc)
             {
                 case 1:
-                    System.out.println("1 - Listar Livros");
+                    TelaCriarLivro.fazerTela(entrada);
                     break;
                 case 2:
-                    System.out.println("2 - Listar Filmes");
+                    System.out.println("Criar Filme");
                     break;
                 case 3:
-                    System.out.println("3 - Listar Séries");
+                    System.out.println("Criar Série");
                     break;
                 case 4:
                     System.out.println("Voltar");
@@ -41,3 +40,4 @@ public class TelaListar implements iMenus
         while(opc != 4);
     }
 }
+

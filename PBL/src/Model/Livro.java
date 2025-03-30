@@ -9,13 +9,22 @@ public class Livro extends Midia
     private String ISBN;
     private boolean tem_exemplar;
 
-    public Livro(String titulo, int ano, String categoria, int avaliacao, LocalDate data, String autor, String editora, String ISBN, boolean tem_exemplar)
+    public Livro(String titulo, int ano, Categoria categoria, String review,
+                 int avaliacao, LocalDate data, String autor, String editora,
+                 String ISBN, boolean tem_exemplar)
     {
-        super(titulo, ano, categoria, avaliacao, data);
+        super(titulo, ano, categoria, review, avaliacao, data);
         this.autor = autor;
         this.editora = editora;
         this.ISBN = ISBN;
         this.tem_exemplar = tem_exemplar;
+    }
+
+    @Override
+    public String toString()
+    {
+        return super.toString() + "\nautor: " + this.autor + "\neditora: " + this.editora +
+                "\nISBN: " + this.ISBN + "\ntem_exemplar: " + this.tem_exemplar + "\n";
     }
 
     public String getAutor()
