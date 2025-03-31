@@ -1,6 +1,6 @@
 package Model.Buscar;
 
-import Model.Midia;
+import Model.Entidades.Midia;
 
 import java.util.ArrayList;
 

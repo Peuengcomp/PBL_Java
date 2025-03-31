@@ -1,8 +1,8 @@
-package Model.Repositorio;
+package Model.Repositorios;
 
 public interface iCatalogo<T>
 {
-    void ListarLivros();
+    void Listar();
     void Adicionar(T objeto);
     void Remover(T objeto);
 }

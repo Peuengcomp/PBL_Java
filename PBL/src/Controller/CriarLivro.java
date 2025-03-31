@@ -1,16 +1,16 @@
 package Controller;
 
-import Model.Categoria;
-import Model.Livro;
-
-import java.time.LocalDate;
+import Model.Entidades.Categoria;
+import Model.Entidades.Livro;
+import Model.Repositorios.CatalogoLivros;
 
 public class CriarLivro
 {
-    public static Livro gerarLivro(String titulo, int ano, Categoria categoria, String review,
-                                   int avaliacao, LocalDate data, String autor, String editora,
+    public static void criarLivro(String titulo, int ano, Categoria categoria,
+                                   String autor, String editora,
                                    String ISBN, boolean tem_exemplar)
     {
-        return new Livro(titulo, ano, categoria, review, avaliacao, data, autor, editora, ISBN, tem_exemplar);
+        Livro livro = new Livro(titulo, ano, categoria, null, 0, null, autor, editora, ISBN, tem_exemplar);
+        CatalogoLivros.getCatalogo().Adicionar(livro);
     }
 }

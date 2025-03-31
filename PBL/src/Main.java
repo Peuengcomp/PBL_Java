@@ -1,3 +1,4 @@
+import Model.Repositorios.CatalogoLivros;
 import View.Criacao.Livros.TelaCriarLivro;
 import View.Geral.TelaMenu;
 
@@ -8,6 +9,7 @@ public class Main
     public static void main(String[] args)
     {
         Scanner entrada = new Scanner(System.in);
-        TelaCriarLivro.fazerTela(entrada);
+        TelaMenu.fazerTela(entrada);
+        CatalogoLivros.getCatalogo().Listar();
     }
 }

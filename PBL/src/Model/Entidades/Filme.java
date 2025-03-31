@@ -1,4 +1,4 @@
-package Model;
+package Model.Entidades;
 
 import java.time.LocalDate;
 import java.util.ArrayList;
@@ -9,8 +9,10 @@ public class Filme extends MidiaAV
     private ArrayList<String> roteiro;
     private int duracao;
 
-    Filme(String titulo, int ano, Categoria categoria, String review, int avaliacao, LocalDate data, String titulo_original, String onde_assistir,
-          ArrayList<String> elenco, ArrayList<String> roteiro, ArrayList<String> direcao, int duracao)
+    public Filme(String titulo, int ano, Categoria categoria, String review, int avaliacao, LocalDate data,
+                 String titulo_original, String onde_assistir, int duracao,
+                 ArrayList<String> elenco, ArrayList<String> roteiro,
+                 ArrayList<String> direcao)
     {
         super(titulo, ano, categoria, review, avaliacao, data, titulo_original, onde_assistir, elenco);
         this.direcao = direcao;

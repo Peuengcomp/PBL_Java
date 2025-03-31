@@ -1,6 +1,7 @@
-package Model.Repositorio;
+package Model.Repositorios;
 
-import Model.Livro;
+import Model.Entidades.Filme;
+import Model.Entidades.Livro;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -10,20 +11,23 @@ public class CatalogoLivros implements iCatalogo<Livro>
     private static CatalogoLivros colecao_livros;
     private List<Livro> livros;
 
-    private void CriarCatalogo()
-    {
-        this.livros = new ArrayList<Livro>();
+    private CatalogoLivros() {
+        CriarCatalogo();
     }
 
-    public static CatalogoLivros getCatalogo()
-    {
-        if (colecao_livros == null)
+    private void CriarCatalogo() {
+        this.livros = new ArrayList<>();
+    }
+
+    public static CatalogoLivros getCatalogo() {
+        if (colecao_livros == null) {
             colecao_livros = new CatalogoLivros();
+        }
         return colecao_livros;
     }
 
     @Override
-    public void ListarLivros()
+    public void Listar()
     {
         for (Livro livro : livros)
         {
@@ -34,11 +38,12 @@ public class CatalogoLivros implements iCatalogo<Livro>
     @Override
     public void Adicionar(Livro objeto)
     {
-        this.livros.add(objeto);
+        livros.add(objeto);
     }
 
     @Override
-    public void Remover(Livro objeto) {
+    public void Remover(Livro objeto)
+    {
 
     }
 }

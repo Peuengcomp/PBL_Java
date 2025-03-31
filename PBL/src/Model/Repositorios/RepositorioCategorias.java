@@ -1,15 +1,15 @@
-package Model.Repositorio;
+package Model.Repositorios;
 
-import Model.Categoria;
+import Model.Entidades.Categoria;
 
 import java.util.ArrayList;
 
-public class Categorias
+public class RepositorioCategorias
 {
-    private static Categorias instancia;
+    private static RepositorioCategorias instancia;
     private static ArrayList<Categoria> categorias;
 
-    private Categorias()
+    private RepositorioCategorias()
     {
         categorias = new ArrayList<Categoria>();
         categorias.add(new Categoria(1, "Ação"));
@@ -27,10 +27,10 @@ public class Categorias
         categorias.add(new Categoria(13, "Musical"));
     }
 
-    public static Categorias getInstancia()
+    public static RepositorioCategorias getInstancia()
     {
         if (instancia == null)
-            instancia = new Categorias();
+            instancia = new RepositorioCategorias();
         return instancia;
     }
 

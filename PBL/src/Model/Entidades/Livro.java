@@ -1,4 +1,4 @@
-package Model;
+package Model.Entidades;
 
 import java.time.LocalDate;
 
@@ -23,7 +23,7 @@ public class Livro extends Midia
     @Override
     public String toString()
     {
-        return super.toString() + "\nautor: " + this.autor + "\neditora: " + this.editora +
+        return super.toString() + "autor: " + this.autor + "\neditora: " + this.editora +
                 "\nISBN: " + this.ISBN + "\ntem_exemplar: " + this.tem_exemplar + "\n";
     }
 
