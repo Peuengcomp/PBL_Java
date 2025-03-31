@@ -23,8 +23,7 @@ public class Midia
 
     public String toString()
     {
-        return "Titulo: " + this.titulo + "\nAno: " + this.ano + "\nCategoria: " + this.genero.getCategoria() +
-                "\nData: " + this.data + "\nReview: " + this.review + "\n";
+        return "Titulo: " + this.titulo + "\nAno: " + this.ano + "\nCategoria: " + this.genero.getCategoria() + "\n";
     }
 
     public String getTitulo() {

@@ -11,5 +11,6 @@ public class Main
         Scanner entrada = new Scanner(System.in);
         TelaMenu.fazerTela(entrada);
         CatalogoLivros.getCatalogo().Listar();
+        entrada.close();
     }
 }

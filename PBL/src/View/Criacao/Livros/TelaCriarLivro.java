@@ -40,15 +40,15 @@ public class TelaCriarLivro
         System.out.println("tem exemplar?");
         System.out.println("1 - SIM");
         System.out.println("2 - NÃO");
-        entrada.nextInt();
-        entrada.nextLine();
+        int valor = entrada.nextInt();
 
-        if (entrada.nextInt() == 1)
+        if (valor == 1)
             tem_exemplar = true;
         else
             tem_exemplar = false;
 
         CriarLivro.criarLivro(titulo, ano, categoria, autor, editora, ISBN, tem_exemplar);
+        System.out.println("Livro criado com sucesso!");
 
     }
 }
