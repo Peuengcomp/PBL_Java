@@ -9,5 +9,6 @@ public class Main
     {
         Scanner entrada = new Scanner(System.in);
         TelaCriarLivro.fazerTela(entrada);
+        Scanner entrada2 = new Scanner(System.in);
     }
 }
