@@ -26,6 +26,11 @@ public class CatalogoLivros implements iCatalogo<Livro>
         return colecao_livros;
     }
 
+    public List<Livro> getLivros()
+    {
+        return this.livros;
+    }
+
     @Override
     public void Listar()
     {
@@ -39,11 +44,5 @@ public class CatalogoLivros implements iCatalogo<Livro>
     public void Adicionar(Livro objeto)
     {
         livros.add(objeto);
-    }
-
-    @Override
-    public void Remover(Livro objeto)
-    {
-
     }
 }

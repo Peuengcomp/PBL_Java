@@ -1,8 +1,8 @@
-package View.Geral;
+package View;
 
+import View.Buscar.TelaBuscar;
 import View.Criacao.TelaCriacao;
 import View.Listar.TelaListar;
-import View.TelaBuscar;
 
 import java.util.Scanner;
 

@@ -1,7 +1,6 @@
-package View.Geral;
+package View;
 
 import Model.Entidades.Categoria;
-import Model.Repositorios.RepositorioCategorias;
 
 import java.util.ArrayList;
 

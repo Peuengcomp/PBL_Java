@@ -9,10 +9,10 @@ public class MidiaAV extends Midia
     private String onde_assistir;
     private ArrayList<String> elenco;
 
-    MidiaAV(String titulo, int ano, Categoria categoria, String review, int avaliacao, LocalDate data,
+    MidiaAV(String titulo, int ano, Categoria categoria,
             String titulo_original, String onde_assistir, ArrayList<String> elenco)
     {
-        super(titulo, ano, categoria, review, avaliacao, data);
+        super(titulo, ano, categoria);
         this.titulo_original = titulo_original;
         this.onde_assistir = onde_assistir;
         this.elenco = elenco;

@@ -26,21 +26,23 @@ public class CatalogoSeries implements iCatalogo<Serie>
         return colecao_series;
     }
 
+    public List<Serie> getSeries()
+    {
+        return this.series;
+    }
+
     @Override
     public void Listar()
     {
-
+        for (Serie serie : series)
+        {
+            System.out.println(serie.toString());
+        }
     }
 
     @Override
     public void Adicionar(Serie objeto)
     {
         series.add(objeto);
-    }
-
-    @Override
-    public void Remover(Serie objeto)
-    {
-
     }
 }

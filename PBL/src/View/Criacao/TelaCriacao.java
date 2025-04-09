@@ -1,6 +1,8 @@
 package View.Criacao;
 
+import View.Criacao.FIlmes.TelaCriarFilme;
 import View.Criacao.Livros.TelaCriarLivro;
+import View.Criacao.Series.TelaCriarSerie;
 
 import java.util.Scanner;
 
@@ -25,10 +27,10 @@ public class TelaCriacao
                     TelaCriarLivro.fazerTela(entrada);
                     break;
                 case 2:
-                    System.out.println("Criar Filme");
+                    TelaCriarFilme.fazerTela(entrada);
                     break;
                 case 3:
-                    System.out.println("Criar Série");
+                    TelaCriarSerie.fazerTela(entrada);
                     break;
                 case 4:
                     System.out.println("Voltar");

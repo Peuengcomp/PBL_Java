@@ -1,11 +1,13 @@
-package View.Criacao.AV.FIlmes;
+package View.Criacao.FIlmes;
 
+import Controller.CriarFilme;
 import Model.Entidades.Categoria;
-import Model.Entidades.Filme;
-import Model.Repositorios.RepositorioCategorias;
-import View.Criacao.AV.TelaEntradaNomes;
-import View.Geral.TelaMostrarCategorias;
+import View.RepositorioCategorias;
+import View.Criacao.TelaEntradaNomes;
+import View.TelaMostrarCategorias;
 
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.Scanner;
 
@@ -58,6 +60,27 @@ public class TelaCriarFilme
 
         ArrayList<String> elenco = TelaEntradaNomes.Adicionar(qtd, entrada);
 
+        System.out.println("Faça um review do filme:");
+        String review = entrada.nextLine();
 
+        System.out.println("Qual sua avaliação do filme?:");
+        int avaliacao = entrada.nextInt();
+
+        System.out.println("Preencha as informaçõe acerca da data em que viu o filme:");
+
+        System.out.println("dia:");
+        int dia = entrada.nextInt();
+
+        System.out.println("mẽs");
+        int mes = entrada.nextInt();
+
+        System.out.println("ano:");
+        int ano_leitura = entrada.nextInt();
+
+        LocalDate data = LocalDate.of(ano_leitura,mes,dia);
+        DateTimeFormatter formatar = DateTimeFormatter.ofPattern("dd/MM/yyyy");
+        data.format(formatar);
+
+        CriarFilme.CriarFilme(titulo, ano, categoria, titulo_original, duracao, onde_assistir, elenco, roteiro, direcao, review, avaliacao, data);
     }
 }

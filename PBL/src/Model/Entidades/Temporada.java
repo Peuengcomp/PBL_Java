@@ -1,18 +1,24 @@
 package Model.Entidades;
 
+import java.time.LocalDate;
+
 public class Temporada
 {
     private int id_temporada;
     private int ano;
     private int qtd_epsidios;
+    private String review;
     private int avaliacao;
+    private LocalDate data;
 
-    Temporada(int id_temporada, int ano, int qtd_epsidios, int avaliacao)
+    Temporada(int id_temporada, int ano, int qtd_epsidios, String review, int avaliacao, LocalDate data)
     {
         this.id_temporada = id_temporada;
         this.ano = ano;
         this.qtd_epsidios = qtd_epsidios;
+        this.review = review;
         this.avaliacao = avaliacao;
+        this.data = data;
     }
 
     public String toString()

@@ -2,15 +2,16 @@ package View.Criacao.Livros;
 
 import Controller.CriarLivro;
 import Model.Entidades.Categoria;
-import Model.Entidades.Livro;
-import Model.Repositorios.RepositorioCategorias;
-import View.Geral.TelaMostrarCategorias;
+import View.RepositorioCategorias;
+import View.TelaMostrarCategorias;
 
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 import java.util.Scanner;
 
 public class TelaCriarLivro
 {
-    public static void fazerTela(Scanner entrada)
+    public static <localDate> void fazerTela(Scanner entrada)
     {
         entrada.nextLine();
         boolean tem_exemplar;
@@ -42,12 +43,35 @@ public class TelaCriarLivro
         System.out.println("2 - NÃO");
         int valor = entrada.nextInt();
 
+        entrada.nextLine();
+
+        System.out.println("Faça um review do livro:");
+        String review = entrada.nextLine();
+
+        System.out.println("Qual sua avaliação do livro?:");
+        int avaliacao = entrada.nextInt();
+
+        System.out.println("Preencha as informaçõe acerca da data de finalização de leitura do livro:");
+
+        System.out.println("dia:");
+        int dia = entrada.nextInt();
+
+        System.out.println("mẽs");
+        int mes = entrada.nextInt();
+
+        System.out.println("ano:");
+        int ano_leitura = entrada.nextInt();
+
+        LocalDate data = LocalDate.of(ano_leitura,mes,dia);
+        DateTimeFormatter formatar = DateTimeFormatter.ofPattern("dd/MM/yyyy");
+        data.format(formatar);
+
         if (valor == 1)
             tem_exemplar = true;
         else
             tem_exemplar = false;
 
-        CriarLivro.criarLivro(titulo, ano, categoria, autor, editora, ISBN, tem_exemplar);
+        CriarLivro.criarLivro(titulo, ano, categoria, autor, editora, ISBN, tem_exemplar, review, avaliacao, data);
         System.out.println("Livro criado com sucesso!");
 
     }

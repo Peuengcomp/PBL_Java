@@ -1,6 +1,7 @@
 package Model.Repositorios;
 
 import Model.Entidades.Filme;
+import Model.Entidades.Livro;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -26,6 +27,11 @@ public class CatalogoFilmes implements iCatalogo<Filme>
         return colecao_filmes;
     }
 
+    public List<Filme> getFilmes()
+    {
+        return this.filmes;
+    }
+
     @Override
     public void Listar()
     {
@@ -41,8 +47,4 @@ public class CatalogoFilmes implements iCatalogo<Filme>
         filmes.add(objeto);
     }
 
-    @Override
-    public void Remover(Filme objeto) {
-
-    }
 }
