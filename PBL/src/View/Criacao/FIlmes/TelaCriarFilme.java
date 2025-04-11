@@ -75,9 +75,9 @@ public class TelaCriarFilme
         int mes = entrada.nextInt();
 
         System.out.println("ano:");
-        int ano_leitura = entrada.nextInt();
+        int ano_assistido = entrada.nextInt();
 
-        LocalDate data = LocalDate.of(ano_leitura,mes,dia);
+        LocalDate data = LocalDate.of(ano_assistido,mes,dia);
         DateTimeFormatter formatar = DateTimeFormatter.ofPattern("dd/MM/yyyy");
         data.format(formatar);
 

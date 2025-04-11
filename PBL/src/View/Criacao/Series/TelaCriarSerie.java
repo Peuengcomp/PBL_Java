@@ -2,10 +2,12 @@ package View.Criacao.Series;
 
 import Controller.CriarSerie;
 import Model.Entidades.Categoria;
+import Model.Entidades.Temporada;
 import View.Criacao.TelaEntradaNomes;
 import View.RepositorioCategorias;
 import View.TelaMostrarCategorias;
 
+import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.Scanner;
 
@@ -14,7 +16,6 @@ public class TelaCriarSerie
     public static void fazerTela(Scanner entrada)
     {
         int qtd;
-        entrada.nextLine();
         System.out.println("Preencha as informações a seguir:");
 
         System.out.println("Título: ");
@@ -35,7 +36,7 @@ public class TelaCriarSerie
         System.out.println("Onde Assistir: ");
         String onde_assistir = entrada.nextLine();
 
-        System.out.println("Quantos atores e atrizes são?: ");
+        System.out.println("Quantos atores e atrizes são: ");
         qtd = entrada.nextInt();
 
         entrada.nextLine();
@@ -45,7 +46,25 @@ public class TelaCriarSerie
         System.out.println("Ano de encerramento: ");
         int ano_de_encerramento = entrada.nextInt();
 
-        CriarSerie.criarSerie(titulo, ano, categoria, titulo_original, onde_assistir, elenco, ano_de_encerramento, null);
+        ArrayList<Temporada> temporadas = new ArrayList<Temporada>();
+
+        System.out.println("Digite a quantidade de temporadas: ");
+        int qtd_temporadas = entrada.nextInt();
+
+        for (int i = 0; i < qtd_temporadas; i++)
+        {
+            temporadas.add(TelaCriarTemporada.fazerTela(entrada, i+1));
+        }
+
+        float soma = 0;
+        for (Temporada temporada : temporadas)
+        {
+            soma += (float) temporada.getAvaliacao();
+        }
+        float avaliacao = soma / temporadas.size();
+
+        CriarSerie.criarSerie(titulo, ano, categoria, titulo_original, onde_assistir,
+                avaliacao, elenco, ano_de_encerramento, temporadas);
 
         System.out.println("Cadastro feito com sucesso!");
     }

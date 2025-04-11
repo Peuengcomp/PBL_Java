@@ -11,7 +11,7 @@ public class Temporada
     private int avaliacao;
     private LocalDate data;
 
-    Temporada(int id_temporada, int ano, int qtd_epsidios, String review, int avaliacao, LocalDate data)
+    public Temporada(int id_temporada, int ano, int qtd_epsidios, String review, int avaliacao, LocalDate data)
     {
         this.id_temporada = id_temporada;
         this.ano = ano;
@@ -23,8 +23,8 @@ public class Temporada
 
     public String toString()
     {
-        return "Temporada: " + this.id_temporada +
-                "Ano: " + this.ano +
+        return "\nTemporada: " + this.id_temporada +
+                "\nAno: " + this.ano +
                 "\nQuantidade: " + this.qtd_epsidios + "\n";
     }
 
@@ -44,6 +44,16 @@ public class Temporada
     public int getAvaliacao()
     {
         return this.avaliacao;
+    }
+
+    public String getReview()
+    {
+        return this.review;
+    }
+
+    public LocalDate getData()
+    {
+        return this.data;
     }
 
     public void setId_temporada(int id_temporada)
