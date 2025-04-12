@@ -1,9 +1,9 @@
 package Model.Repositorios;
 
 import Model.Entidades.Filme;
-import Model.Entidades.Livro;
 
 import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.List;
 
 public class CatalogoFilmes implements iCatalogo<Filme>
@@ -33,11 +33,23 @@ public class CatalogoFilmes implements iCatalogo<Filme>
     }
 
     @Override
-    public void Listar()
+    public void ListarOrdenar(boolean ordem)
     {
-        for (Filme filme : filmes)
+        if (filmes.isEmpty())
         {
-            System.out.println(filme);
+            System.out.println("Lista vazia!");
+        }
+        else
+        {
+            if (ordem)
+                filmes.sort(Comparator.comparingInt(Filme::getAvaliacao));
+            else
+                filmes.sort(Comparator.comparingInt(Filme::getAvaliacao).reversed());
+
+            for (Filme filme : filmes)
+            {
+                System.out.println(filme);
+            }
         }
     }
 

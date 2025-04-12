@@ -4,6 +4,7 @@ import Model.Entidades.Filme;
 import Model.Entidades.Livro;
 
 import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.List;
 
 public class CatalogoLivros implements iCatalogo<Livro>
@@ -32,11 +33,23 @@ public class CatalogoLivros implements iCatalogo<Livro>
     }
 
     @Override
-    public void Listar()
+    public void ListarOrdenar(boolean ordem)
     {
-        for (Livro livro : livros)
+        if (livros.isEmpty())
         {
-            System.out.println(livro.toString());
+            System.out.println("Lista vazia!");
+        }
+        else
+        {
+            if (ordem)
+                livros.sort(Comparator.comparingInt(Livro::getAvaliacao));
+            else
+                livros.sort(Comparator.comparingInt(Livro::getAvaliacao).reversed());
+
+            for (Livro livro : livros)
+            {
+                System.out.println(livro);
+            }
         }
     }
 

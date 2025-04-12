@@ -13,7 +13,7 @@ public class TelaEntradaNomes
         for (int i = 0; i < qtd; i++)
         {
             k = i + 1;
-            System.out.print("Digite o nome" + k + ": ");
+            System.out.print("Digite o nome " + k + ": ");
             String nome = entrada.nextLine();
             nomes.add(nome);
         }

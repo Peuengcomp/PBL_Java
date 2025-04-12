@@ -1,4 +1,4 @@
-package View;
+package View.Principais;
 
 import Model.Entidades.Categoria;
 

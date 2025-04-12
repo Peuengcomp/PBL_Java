@@ -1,9 +1,9 @@
-import Model.Repositorios.CatalogoFilmes;
-import Model.Repositorios.CatalogoLivros;
-import Model.Repositorios.CatalogoSeries;
-import View.Criacao.Series.TelaCriarSerie;
-import View.TelaMenu;
+import Controller.CriarLivro;
+import Model.Entidades.Categoria;
+import Model.Entidades.Livro;
+import View.Principais.TelaMenu;
 
+import java.time.LocalDate;
 import java.util.Scanner;
 
 public class Main
@@ -11,7 +11,7 @@ public class Main
     public static void main(String[] args)
     {
         Scanner entrada = new Scanner(System.in);
-        TelaCriarSerie.fazerTela(entrada);
-        CatalogoSeries.getCatalogo().Listar();
+        TelaMenu.fazerTela(entrada);
+        entrada.close();
     }
 }

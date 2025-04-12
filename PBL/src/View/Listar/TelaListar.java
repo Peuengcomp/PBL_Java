@@ -1,5 +1,7 @@
 package View.Listar;
 
+import Model.Repositorios.CatalogoLivros;
+
 import java.util.Scanner;
 
 public class TelaListar
@@ -17,16 +19,29 @@ public class TelaListar
 
             opc = entrada.nextInt();
 
+            System.out.println("1 - Ordem Crescente de Avaliação");
+            System.out.println("2 - Ordem Decrescente de Avaliação");
+
+            int escolha_ordem = entrada.nextInt();
+            boolean valor;
+
+            if (escolha_ordem == 1)
+                valor = true;
+            else if (escolha_ordem == 2)
+                valor = false;
+            else
+                valor = true;
+
             switch (opc)
             {
                 case 1:
-                    System.out.println("1 - Listar Livros");
+                    CatalogoLivros.getCatalogo().ListarOrdenar(valor);
                     break;
                 case 2:
-                    System.out.println("2 - Listar Filmes");
+                    CatalogoLivros.getCatalogo().ListarOrdenar(valor);
                     break;
                 case 3:
-                    System.out.println("3 - Listar Séries");
+                    CatalogoLivros.getCatalogo().ListarOrdenar(valor);
                     break;
                 case 4:
                     System.out.println("Voltar");

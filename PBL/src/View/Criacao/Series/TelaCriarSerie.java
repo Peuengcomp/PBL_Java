@@ -4,10 +4,9 @@ import Controller.CriarSerie;
 import Model.Entidades.Categoria;
 import Model.Entidades.Temporada;
 import View.Criacao.TelaEntradaNomes;
-import View.RepositorioCategorias;
-import View.TelaMostrarCategorias;
+import View.Principais.RepositorioCategorias;
+import View.Principais.TelaMostrarCategorias;
 
-import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.Scanner;
 
@@ -56,15 +55,7 @@ public class TelaCriarSerie
             temporadas.add(TelaCriarTemporada.fazerTela(entrada, i+1));
         }
 
-        float soma = 0;
-        for (Temporada temporada : temporadas)
-        {
-            soma += (float) temporada.getAvaliacao();
-        }
-        float avaliacao = soma / temporadas.size();
-
-        CriarSerie.criarSerie(titulo, ano, categoria, titulo_original, onde_assistir,
-                avaliacao, elenco, ano_de_encerramento, temporadas);
+        CriarSerie.criarSerie(titulo, ano, categoria, titulo_original, onde_assistir, elenco, ano_de_encerramento, temporadas);
 
         System.out.println("Cadastro feito com sucesso!");
     }

@@ -1,4 +1,4 @@
-package View;
+package View.Principais;
 
 import View.Buscar.TelaBuscar;
 import View.Criacao.TelaCriacao;

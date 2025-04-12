@@ -2,6 +2,6 @@ package Model.Repositorios;
 
 public interface iCatalogo<T>
 {
-    void Listar();
+    void ListarOrdenar(boolean ordem);
     void Adicionar(T objeto);
 }

@@ -1,4 +1,4 @@
-package View;
+package View.Principais;
 
 import Model.Entidades.Categoria;
 
@@ -25,6 +25,10 @@ public class RepositorioCategorias
         categorias.add(new Categoria(11, "Animação"));
         categorias.add(new Categoria(12, "Documentário"));
         categorias.add(new Categoria(13, "Musical"));
+        categorias.add(new Categoria(14, "Guerra"));
+        categorias.add(new Categoria(15, "Biografia"));
+        categorias.add(new Categoria(16, "Policial"));
+        categorias.add(new Categoria(17, "Épico"));
     }
 
     public static RepositorioCategorias getInstancia()

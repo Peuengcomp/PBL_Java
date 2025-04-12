@@ -2,8 +2,8 @@ package View.Criacao.Livros;
 
 import Controller.CriarLivro;
 import Model.Entidades.Categoria;
-import View.RepositorioCategorias;
-import View.TelaMostrarCategorias;
+import View.Principais.RepositorioCategorias;
+import View.Principais.TelaMostrarCategorias;
 
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
@@ -45,10 +45,10 @@ public class TelaCriarLivro
 
         entrada.nextLine();
 
-        System.out.println("Faça um review do livro:");
+        System.out.println("Faça um review do livro: ");
         String review = entrada.nextLine();
 
-        System.out.println("Qual sua avaliação do livro?:");
+        System.out.println("Avalie de 1 a 5 o livro: ");
         int avaliacao = entrada.nextInt();
 
         System.out.println("Preencha as informaçõe acerca da data de finalização de leitura do livro:");

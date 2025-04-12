@@ -3,6 +3,7 @@ package Model.Repositorios;
 import Model.Entidades.Livro;
 import Model.Entidades.Serie;
 
+import java.util.Comparator;
 import java.util.List;
 import java.util.ArrayList;
 
@@ -32,11 +33,23 @@ public class CatalogoSeries implements iCatalogo<Serie>
     }
 
     @Override
-    public void Listar()
+    public void ListarOrdenar(boolean ordem)
     {
-        for (Serie serie : series)
+        if (series.isEmpty())
         {
-            System.out.println(serie.toString());
+            System.out.println("Lista vazia!");
+        }
+        else
+        {
+            if (ordem)
+                series.sort(Comparator.comparingDouble(Serie::getAvaliacao));
+            else
+                series.sort(Comparator.comparingDouble(Serie::getAvaliacao).reversed());
+
+            for (Serie serie : series)
+            {
+                System.out.println(serie);
+            }
         }
     }
 

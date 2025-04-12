@@ -45,6 +45,11 @@ public class Filme extends MidiaAV
         return this.duracao;
     }
 
+    public int getAvaliacao()
+    {
+        return this.avaliacao;
+    }
+
     public void setDirecao(ArrayList<String> direcao) {
         this.direcao = direcao;
     }

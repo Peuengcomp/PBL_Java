@@ -2,9 +2,9 @@ package View.Criacao.FIlmes;
 
 import Controller.CriarFilme;
 import Model.Entidades.Categoria;
-import View.RepositorioCategorias;
+import View.Principais.RepositorioCategorias;
 import View.Criacao.TelaEntradaNomes;
-import View.TelaMostrarCategorias;
+import View.Principais.TelaMostrarCategorias;
 
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
@@ -39,31 +39,31 @@ public class TelaCriarFilme
         System.out.println("Duraçao em filmes (Em min):");
         int duracao = entrada.nextInt();
 
-        System.out.println("Quantos diretores são?: ");
+        System.out.println("Quantos diretores são: ");
         qtd = entrada.nextInt();
 
         entrada.nextLine();
 
         ArrayList<String> direcao = TelaEntradaNomes.Adicionar(qtd, entrada);
 
-        System.out.println("Quantos roteiristas são?: ");
+        System.out.println("Quantos roteiristas são: ");
         qtd = entrada.nextInt();
 
         entrada.nextLine();
 
         ArrayList<String> roteiro = TelaEntradaNomes.Adicionar(qtd, entrada);
 
-        System.out.println("Quantos atores e atrizes são?: ");
+        System.out.println("Quantos atores e atrizes são: ");
         qtd = entrada.nextInt();
 
         entrada.nextLine();
 
         ArrayList<String> elenco = TelaEntradaNomes.Adicionar(qtd, entrada);
 
-        System.out.println("Faça um review do filme:");
+        System.out.println("Faça um review do filme: ");
         String review = entrada.nextLine();
 
-        System.out.println("Qual sua avaliação do filme?:");
+        System.out.println("Avalie de 1 a 5 o filme: ");
         int avaliacao = entrada.nextInt();
 
         System.out.println("Preencha as informaçõe acerca da data em que viu o filme:");
