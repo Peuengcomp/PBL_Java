@@ -25,7 +25,10 @@ public class Temporada
     {
         return "\nTemporada: " + this.id_temporada +
                 "\nAno: " + this.ano +
-                "\nQuantidade: " + this.qtd_epsidios + "\n";
+                "\nQuantidade de episódios: " + this.qtd_epsidios +
+                "\nFoi finalizada em: " + this.data +
+                "\nAvaliacao: " + this.avaliacao +
+                "\nReview"+ this.review + "\n";
     }
 
     public int getId_temporada()

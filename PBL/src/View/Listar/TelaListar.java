@@ -18,19 +18,22 @@ public class TelaListar
             System.out.print("Escolha uma opcao: ");
 
             opc = entrada.nextInt();
+            boolean valor = true;
 
-            System.out.println("1 - Ordem Crescente de Avaliação");
-            System.out.println("2 - Ordem Decrescente de Avaliação");
+            if(opc == 1 || opc == 2 || opc == 3)
+            {
+                System.out.println("1 - Ordem Crescente de Avaliação");
+                System.out.println("2 - Ordem Decrescente de Avaliação");
 
-            int escolha_ordem = entrada.nextInt();
-            boolean valor;
+                int escolha_ordem = entrada.nextInt();
 
-            if (escolha_ordem == 1)
-                valor = true;
-            else if (escolha_ordem == 2)
-                valor = false;
-            else
-                valor = true;
+                if (escolha_ordem == 1)
+                    valor = true;
+                else if (escolha_ordem == 2)
+                    valor = false;
+                else
+                    valor = true;
+            }
 
             switch (opc)
             {

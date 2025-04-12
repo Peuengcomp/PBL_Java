@@ -30,7 +30,10 @@ public class Livro extends Midia
     public String toString()
     {
         return super.toString() + "autor: " + this.autor + "\neditora: " + this.editora +
-                "\nISBN: " + this.ISBN + "\ntem_exemplar: " + exemplar() + "\n";
+                "\nISBN: " + this.ISBN + "\ntem_exemplar: " + exemplar() +
+                "\nFoi finalizado em: " + this.data +
+                "\nAvaliacao: " + this.avaliacao +
+                "\nReview"+ this.review + "\n";
     }
 
     public String getAutor()

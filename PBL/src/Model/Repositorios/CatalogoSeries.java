@@ -37,7 +37,7 @@ public class CatalogoSeries implements iCatalogo<Serie>
     {
         if (series.isEmpty())
         {
-            System.out.println("Lista vazia!");
+            System.out.println("Nenhuma série cadastrada");
         }
         else
         {

@@ -30,7 +30,9 @@ public class Filme extends MidiaAV
     {
         return super.toString() + "Direção: " + this.direcao +
                 "\nRoteiro: " + this.roteiro +
-                "\nDuracao: " + this.duracao + "\n";
+                "\nDuracao: " + this.duracao + "\nFoi visto em:" + this.data +
+                "\nAvaliacao: " + this.avaliacao +
+                "\nReview"+ this.review + "\n";
     }
 
     public ArrayList<String> getDirecao() {

@@ -37,7 +37,7 @@ public class CatalogoFilmes implements iCatalogo<Filme>
     {
         if (filmes.isEmpty())
         {
-            System.out.println("Lista vazia!");
+            System.out.println("Nenhum filme cadastrado");
         }
         else
         {
