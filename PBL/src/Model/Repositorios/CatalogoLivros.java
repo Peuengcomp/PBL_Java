@@ -1,16 +1,14 @@
 package Model.Repositorios;
 
-import Model.Entidades.Filme;
 import Model.Entidades.Livro;
 
 import java.util.ArrayList;
 import java.util.Comparator;
-import java.util.List;
 
 public class CatalogoLivros implements iCatalogo<Livro>
 {
     private static CatalogoLivros colecao_livros;
-    private List<Livro> livros;
+    private ArrayList<Livro> livros;
 
     private CatalogoLivros() {
         CriarCatalogo();
@@ -27,7 +25,7 @@ public class CatalogoLivros implements iCatalogo<Livro>
         return colecao_livros;
     }
 
-    public List<Livro> getLivros()
+    public ArrayList<Livro> getLivros()
     {
         return this.livros;
     }

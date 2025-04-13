@@ -1,16 +1,14 @@
 package Model.Repositorios;
 
-import Model.Entidades.Livro;
 import Model.Entidades.Serie;
 
 import java.util.Comparator;
-import java.util.List;
 import java.util.ArrayList;
 
 public class CatalogoSeries implements iCatalogo<Serie>
 {
     private static CatalogoSeries colecao_series;
-    private List<Serie> series;
+    private ArrayList<Serie> series;
 
     private CatalogoSeries() {
         CriarCatalogo();
@@ -27,7 +25,7 @@ public class CatalogoSeries implements iCatalogo<Serie>
         return colecao_series;
     }
 
-    public List<Serie> getSeries()
+    public ArrayList<Serie> getSeries()
     {
         return this.series;
     }

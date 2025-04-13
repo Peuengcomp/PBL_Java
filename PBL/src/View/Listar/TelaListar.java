@@ -47,7 +47,7 @@ public class TelaListar
                     CatalogoLivros.getCatalogo().ListarOrdenar(valor);
                     break;
                 case 4:
-                    System.out.println("Voltar");
+                    System.out.println("Voltando...");
                     break;
                 default:
                     System.out.println("Digite uma entrada válida");

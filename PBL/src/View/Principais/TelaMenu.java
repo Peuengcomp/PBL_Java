@@ -34,7 +34,7 @@ public class TelaMenu
                     TelaListar.fazerTela(entrada);
                     break;
                 case 4:
-                    System.out.println("Sair");
+                    System.out.println("Saindo...");
                     break;
                 default:
                     System.out.println("Digite uma entrada válida");

@@ -9,7 +9,7 @@ import java.util.List;
 public class CatalogoFilmes implements iCatalogo<Filme>
 {
     private static CatalogoFilmes colecao_filmes;
-    private List<Filme> filmes;
+    private ArrayList<Filme> filmes;
 
     // Constructor to initialize the filmes list
     private CatalogoFilmes() {
@@ -27,7 +27,7 @@ public class CatalogoFilmes implements iCatalogo<Filme>
         return colecao_filmes;
     }
 
-    public List<Filme> getFilmes()
+    public ArrayList<Filme> getFilmes()
     {
         return this.filmes;
     }

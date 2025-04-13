@@ -33,7 +33,7 @@ public class Livro extends Midia
                 "\nISBN: " + this.ISBN + "\ntem_exemplar: " + exemplar() +
                 "\nFoi finalizado em: " + this.data +
                 "\nAvaliacao: " + this.avaliacao +
-                "\nReview"+ this.review + "\n";
+                "\nReview: "+ this.review + "\n";
     }
 
     public String getAutor()

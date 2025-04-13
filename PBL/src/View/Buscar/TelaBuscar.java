@@ -20,7 +20,7 @@ public class TelaBuscar
             switch (opc)
             {
                 case 1:
-                    System.out.println("Buscar Livro");
+                    TelaBuscarLivro.fazerTela(entrada);
                     break;
                 case 2:
                     System.out.println("Buscar Filme");
@@ -29,7 +29,7 @@ public class TelaBuscar
                     System.out.println("Buscar Série");
                     break;
                 case 4:
-                    System.out.println("Voltar");
+                    System.out.println("Voltando...");
                     break;
                 default:
                     System.out.println("Digite uma entrada válida");
