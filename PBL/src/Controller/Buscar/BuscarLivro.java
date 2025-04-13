@@ -1,11 +1,11 @@
-package Model.Buscar;
+package Controller.Buscar;
 
 import Model.Entidades.Livro;
 import Model.Repositorios.CatalogoLivros;
 
 import java.util.ArrayList;
 
-public  class BuscarLivro implements iBuscarMidia
+public class BuscarLivro
 {
     public static ArrayList<Livro> buscarAutor(String autor)
     {

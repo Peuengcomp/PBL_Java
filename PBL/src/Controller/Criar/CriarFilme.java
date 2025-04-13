@@ -1,4 +1,4 @@
-package Controller;
+package Controller.Criar;
 
 import Model.Entidades.Categoria;
 import Model.Entidades.Filme;

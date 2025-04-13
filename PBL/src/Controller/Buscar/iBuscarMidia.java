@@ -1,8 +1,9 @@
-package Model.Buscar;
+package Controller.Buscar;
 
 import Model.Entidades.Midia;
+import Model.Entidades.MidiaAV;
+
 import java.util.ArrayList;
-import java.util.List;
 
 public interface iBuscarMidia
 {
@@ -37,6 +38,22 @@ public interface iBuscarMidia
             if (midia.getCategoria().getId() == id)
                 resultado.add(midia);
 
+        }
+        if (resultado.isEmpty())
+            return null;
+        return resultado;
+    }
+
+    static <T extends MidiaAV> ArrayList<T> BuscarNomes(String nome, ArrayList<T> lista)
+    {
+        ArrayList<T> resultado = new ArrayList<>();
+        for (T midiaAV : lista)
+        {
+            for (String nomes : midiaAV.getElenco())
+            {
+                if (nome.equals(nomes))
+                    resultado.add(midiaAV);
+            }
         }
         if (resultado.isEmpty())
             return null;

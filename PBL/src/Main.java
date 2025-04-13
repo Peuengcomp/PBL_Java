@@ -1,9 +1,5 @@
-import Controller.CriarLivro;
-import Model.Entidades.Categoria;
-import Model.Entidades.Livro;
 import View.Principais.TelaMenu;
 
-import java.time.LocalDate;
 import java.util.Scanner;
 
 public class Main

@@ -1,16 +1,16 @@
 package View.Buscar;
 
-import Controller.Buscar.BuscarLivro;
 import Controller.Buscar.iBuscarMidia;
-import Model.Entidades.Livro;
-import Model.Repositorios.CatalogoLivros;
+import Controller.Buscar.BuscarFilme;
+import Model.Entidades.Filme;
+import Model.Repositorios.CatalogoFilmes;
 import View.Principais.RepositorioCategorias;
 import View.Principais.TelaMostrarCategorias;
 
 import java.util.ArrayList;
 import java.util.Scanner;
 
-public class TelaBuscarLivro
+public class TelaBuscarFilme
 {
     public static void fazerTela(Scanner entrada)
     {
@@ -21,23 +21,21 @@ public class TelaBuscarLivro
             System.out.println("1 - Buscar por título");
             System.out.println("2 - Buscar por gênero");
             System.out.println("3 - Buscar por ano");
-            System.out.println("4 - Buscar por autor");
-            System.out.println("5 - Buscar por ISBN");
+            System.out.println("4 - Buscar por diretor");
+            System.out.println("5 - Buscar por ator");
             System.out.println("6 - Voltar");
-            System.out.print("Escolha uma opcao: ");
 
             opc = entrada.nextInt();
-            entrada.nextLine();
 
             switch (opc)
             {
                 case 1:
                     System.out.println("Digite o título:");
                     String titulo = entrada.nextLine();
-                    Livro livro = iBuscarMidia.buscarTitulo(titulo, CatalogoLivros.getCatalogo().getLivros());
+                    Filme filme = iBuscarMidia.buscarTitulo(titulo, CatalogoFilmes.getCatalogo().getFilmes());
 
-                    if (livro != null)
-                        System.out.println(livro.toString());
+                    if (filme != null)
+                        System.out.println(filme.toString());
                     else
                         System.out.println("Livro não encontrado!");
 
@@ -49,14 +47,14 @@ public class TelaBuscarLivro
                     System.out.println("Digite o ID da categoria desejada: ");
                     int id = entrada.nextInt();
                     RepositorioCategorias.getCategoria(id);
-                    ArrayList<Livro> livros = iBuscarMidia.buscarCategoria(id, CatalogoLivros.getCatalogo().getLivros());
+                    ArrayList<Filme> filmes = iBuscarMidia.buscarCategoria(id, CatalogoFilmes.getCatalogo().getFilmes());
 
-                    if (livros == null)
+                    if (filmes == null)
                         System.out.println("Nenhum livro encontrado!");
                     else
-                        for (Livro l : livros)
+                        for (Filme f : filmes)
                         {
-                            System.out.println(l.toString());
+                            System.out.println(filmes.toString());
                         }
                     break;
 
@@ -64,50 +62,52 @@ public class TelaBuscarLivro
                     System.out.println("Digite o ano: ");
                     int ano = entrada.nextInt();
 
-                    ArrayList<Livro> livros_ano = iBuscarMidia.buscarAno(ano, CatalogoLivros.getCatalogo().getLivros());
+                    ArrayList<Filme> filmes_ano = iBuscarMidia.buscarAno(ano, CatalogoFilmes.getCatalogo().getFilmes());
 
-                    if (livros_ano == null)
+                    if (filmes_ano == null)
                         System.out.println("Nenhum livro encontrado!");
                     else
-                        for (Livro l : livros_ano)
+                        for (Filme f : filmes_ano)
                         {
-                            System.out.println(l.toString());
+                            System.out.println(f.toString());
                         }
                     break;
-
                 case 4:
-                    System.out.println("Digite o autor: ");
-                    String autor = entrada.nextLine();
+                    System.out.println("Digite o diretor: ");
+                    String diretor = entrada.nextLine();
 
-                    ArrayList<Livro> livros_autor = BuscarLivro.buscarAutor(autor);
-                    if (livros_autor == null)
-                        System.out.println("Nenhum livro encontrado!");
+                    ArrayList<Filme> filmes_diretor = BuscarFilme.buscarDiretor(diretor, CatalogoFilmes.getCatalogo().getFilmes());
+
+                    if (filmes_diretor == null)
+                        System.out.println("Nenhum filme encontrado!");
                     else
-                        for (Livro l : livros_autor)
+                        for (Filme f : filmes_diretor)
                         {
-                            System.out.println(l.toString());
+                            System.out.println(f.toString());
                         }
                     break;
-
                 case 5:
-                    System.out.println("Digite o ISBN: ");
-                    String isbn = entrada.nextLine();
+                    System.out.println("Digite o ator");
+                    String elenco = entrada.nextLine();
 
-                    Livro livro_isbn = BuscarLivro.buscarISBN(isbn);
-                    if (livro_isbn == null)
-                        System.out.println("Nenhum livro encontrado!");
+                    ArrayList<Filme> filmes_elenco = iBuscarMidia.BuscarNomes(elenco, CatalogoFilmes.getCatalogo().getFilmes());
+
+                    if (filmes_elenco == null)
+                        System.out.println("Nenhum filme encontrado!");
                     else
-                        System.out.println(livro_isbn.toString());
+                        for (Filme f : filmes_elenco)
+                        {
+                            System.out.println(f.toString());
+                        }
                     break;
 
                 case 6:
                     System.out.println("Voltando...");
                     break;
-
-                default:
-                    System.out.println("Digite uma entrada válida");
             }
         }
-        while(opc != 6);
+        while (opc != 6);
+
     }
 }
+

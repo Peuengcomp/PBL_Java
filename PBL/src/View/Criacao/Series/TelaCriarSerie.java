@@ -1,6 +1,6 @@
 package View.Criacao.Series;
 
-import Controller.CriarSerie;
+import Controller.Criar.CriarSerie;
 import Model.Entidades.Categoria;
 import Model.Entidades.Temporada;
 import View.Criacao.TelaEntradaNomes;

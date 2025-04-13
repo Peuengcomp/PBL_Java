@@ -1,6 +1,6 @@
 package View.Criacao.FIlmes;
 
-import Controller.CriarFilme;
+import Controller.Criar.CriarFilme;
 import Model.Entidades.Categoria;
 import View.Principais.RepositorioCategorias;
 import View.Criacao.TelaEntradaNomes;

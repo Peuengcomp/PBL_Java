@@ -1,13 +1,10 @@
-package Controller;
+package Controller.Criar;
 
 import Model.Entidades.Categoria;
-import Model.Entidades.Livro;
 import Model.Entidades.Serie;
 import Model.Entidades.Temporada;
-import Model.Repositorios.CatalogoLivros;
 import Model.Repositorios.CatalogoSeries;
 
-import java.time.LocalDate;
 import java.util.ArrayList;
 
 public class CriarSerie
