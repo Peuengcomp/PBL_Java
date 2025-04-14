@@ -31,11 +31,12 @@ public class CatalogoLivros implements iCatalogo<Livro>
     }
 
     @Override
-    public void ListarOrdenar(boolean ordem)
+    public boolean ListarOrdenar(boolean ordem)
     {
         if (livros.isEmpty())
         {
             System.out.println("Nenhum livro cadastrado");
+            return false;
         }
         else
         {
@@ -49,6 +50,7 @@ public class CatalogoLivros implements iCatalogo<Livro>
                 System.out.println(livro);
             }
         }
+        return true;
     }
 
     @Override
@@ -56,4 +58,5 @@ public class CatalogoLivros implements iCatalogo<Livro>
     {
         livros.add(objeto);
     }
+
 }

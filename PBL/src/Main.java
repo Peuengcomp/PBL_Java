@@ -1,5 +1,5 @@
-import View.Principais.TelaMenu;
 
+import View.Principais.TelaMenu;
 import java.util.Scanner;
 
 public class Main

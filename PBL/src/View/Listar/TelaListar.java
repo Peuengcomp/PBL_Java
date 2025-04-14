@@ -1,6 +1,10 @@
 package View.Listar;
 
+import Model.Repositorios.CatalogoFilmes;
 import Model.Repositorios.CatalogoLivros;
+import Model.Repositorios.CatalogoSeries;
+import Model.Repositorios.iCatalogo;
+import View.Principais.TelaMostrarCategorias;
 
 import java.util.Scanner;
 
@@ -9,6 +13,11 @@ public class TelaListar
     public static void fazerTela(Scanner entrada)
     {
         int opc;
+        boolean valor = true;
+        boolean tem;
+        boolean cheio;
+        int ano;
+        int id_categoria;
         do
         {
             System.out.println("1 - Listar Livros");
@@ -18,7 +27,6 @@ public class TelaListar
             System.out.print("Escolha uma opcao: ");
 
             opc = entrada.nextInt();
-            boolean valor = true;
 
             if(opc == 1 || opc == 2 || opc == 3)
             {
@@ -38,13 +46,84 @@ public class TelaListar
             switch (opc)
             {
                 case 1:
-                    CatalogoLivros.getCatalogo().ListarOrdenar(valor);
+                    tem = CatalogoLivros.getCatalogo().ListarOrdenar(valor);
+                    if (tem == false)
+                        continue;
+                    else
+                    {
+                        int escolha = TelaFiltrar.fazerTela(entrada);
+                        if (escolha == -1)
+                        {
+                            continue;
+                        } else if (escolha == 1)
+                        {
+                            System.out.println("Digite o ano:");
+                            ano = entrada.nextInt();
+                            cheio = iCatalogo.FiltrarPorAno(CatalogoLivros.getCatalogo().getLivros(), ano);
+                            if (cheio == false)
+                                System.out.println("Não encontrado");
+                        } else
+                        {
+                            System.out.println("Digite a categoria:");
+                            TelaMostrarCategorias.MostrarCategorias();
+                            id_categoria = entrada.nextInt();
+                            cheio = iCatalogo.FiltrarPorCategoria(CatalogoLivros.getCatalogo().getLivros(), id_categoria);
+                            if (cheio == false)
+                                System.out.println("Não encontrado");
+                        }
+                    }
+
                     break;
                 case 2:
-                    CatalogoLivros.getCatalogo().ListarOrdenar(valor);
+                    tem = CatalogoFilmes.getCatalogo().ListarOrdenar(valor);
+                    if (tem == false)
+                        continue;
+                    else
+                    {
+                        int escolha = TelaFiltrar.fazerTela(entrada);
+                        if (escolha == -1) {
+                            continue;
+                        } else if (escolha == 1) {
+                            System.out.println("Digite o ano:");
+                            ano = entrada.nextInt();
+                            cheio = iCatalogo.FiltrarPorAno(CatalogoFilmes.getCatalogo().getFilmes(), ano);
+                            if (cheio == false)
+                                System.out.println("Não encontrado");
+                        } else {
+                            System.out.println("Digite a categoria:");
+                            TelaMostrarCategorias.MostrarCategorias();
+                            id_categoria = entrada.nextInt();
+                            cheio = iCatalogo.FiltrarPorCategoria(CatalogoFilmes.getCatalogo().getFilmes(), id_categoria);
+                            if (cheio == false)
+                                System.out.println("Não encontrado");
+                        }
+                    }
                     break;
                 case 3:
-                    CatalogoLivros.getCatalogo().ListarOrdenar(valor);
+                    tem = CatalogoLivros.getCatalogo().ListarOrdenar(valor);
+                    if (tem == false)
+                        continue;
+                    else
+                    {
+                        int escolha = TelaFiltrar.fazerTela(entrada);
+                        if (escolha == -1) {
+                            continue;
+                        } else if (escolha == 1) {
+                            System.out.println("Digite o ano:");
+                            ano = entrada.nextInt();
+                            cheio = iCatalogo.FiltrarPorAno(CatalogoSeries.getCatalogo().getSeries(), ano);
+                            if (cheio == false)
+                                System.out.println("Não encontrado");
+                        } else {
+                            System.out.println("Digite a categoria:");
+                            TelaMostrarCategorias.MostrarCategorias();
+                            id_categoria = entrada.nextInt();
+                            cheio = iCatalogo.FiltrarPorCategoria(CatalogoSeries.getCatalogo().getSeries(), id_categoria);
+                            if (cheio == false)
+                                System.out.println("Não encontrado");
+                        }
+                    }
+
                     break;
                 case 4:
                     System.out.println("Voltando...");

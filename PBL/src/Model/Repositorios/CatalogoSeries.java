@@ -31,11 +31,12 @@ public class CatalogoSeries implements iCatalogo<Serie>
     }
 
     @Override
-    public void ListarOrdenar(boolean ordem)
+    public boolean ListarOrdenar(boolean ordem)
     {
         if (series.isEmpty())
         {
             System.out.println("Nenhuma série cadastrada");
+            return false;
         }
         else
         {
@@ -49,6 +50,7 @@ public class CatalogoSeries implements iCatalogo<Serie>
                 System.out.println(serie);
             }
         }
+        return true;
     }
 
     @Override

@@ -11,7 +11,6 @@ public class CatalogoFilmes implements iCatalogo<Filme>
     private static CatalogoFilmes colecao_filmes;
     private ArrayList<Filme> filmes;
 
-    // Constructor to initialize the filmes list
     private CatalogoFilmes() {
         CriarCatalogo();
     }
@@ -33,11 +32,12 @@ public class CatalogoFilmes implements iCatalogo<Filme>
     }
 
     @Override
-    public void ListarOrdenar(boolean ordem)
+    public boolean ListarOrdenar(boolean ordem)
     {
         if (filmes.isEmpty())
         {
             System.out.println("Nenhum filme cadastrado");
+            return false;
         }
         else
         {
@@ -51,6 +51,7 @@ public class CatalogoFilmes implements iCatalogo<Filme>
                 System.out.println(filme);
             }
         }
+        return true;
     }
 
     @Override
