@@ -1,5 +1,6 @@
 package View.Listar;
 
+import Controller.Filtrar.iFiltrar;
 import Model.Repositorios.CatalogoFilmes;
 import Model.Repositorios.CatalogoLivros;
 import Model.Repositorios.CatalogoSeries;
@@ -59,7 +60,7 @@ public class TelaListar
                         {
                             System.out.println("Digite o ano:");
                             ano = entrada.nextInt();
-                            cheio = iCatalogo.FiltrarPorAno(CatalogoLivros.getCatalogo().getLivros(), ano);
+                            cheio = iFiltrar.FiltrarPorAno(CatalogoLivros.getCatalogo().getLivros(), ano);
                             if (cheio == false)
                                 System.out.println("Não encontrado");
                         } else
@@ -67,7 +68,7 @@ public class TelaListar
                             System.out.println("Digite a categoria:");
                             TelaMostrarCategorias.MostrarCategorias();
                             id_categoria = entrada.nextInt();
-                            cheio = iCatalogo.FiltrarPorCategoria(CatalogoLivros.getCatalogo().getLivros(), id_categoria);
+                            cheio = iFiltrar.FiltrarPorCategoria(CatalogoLivros.getCatalogo().getLivros(), id_categoria);
                             if (cheio == false)
                                 System.out.println("Não encontrado");
                         }
@@ -86,14 +87,14 @@ public class TelaListar
                         } else if (escolha == 1) {
                             System.out.println("Digite o ano:");
                             ano = entrada.nextInt();
-                            cheio = iCatalogo.FiltrarPorAno(CatalogoFilmes.getCatalogo().getFilmes(), ano);
+                            cheio = iFiltrar.FiltrarPorAno(CatalogoFilmes.getCatalogo().getFilmes(), ano);
                             if (cheio == false)
                                 System.out.println("Não encontrado");
                         } else {
                             System.out.println("Digite a categoria:");
                             TelaMostrarCategorias.MostrarCategorias();
                             id_categoria = entrada.nextInt();
-                            cheio = iCatalogo.FiltrarPorCategoria(CatalogoFilmes.getCatalogo().getFilmes(), id_categoria);
+                            cheio = iFiltrar.FiltrarPorCategoria(CatalogoFilmes.getCatalogo().getFilmes(), id_categoria);
                             if (cheio == false)
                                 System.out.println("Não encontrado");
                         }
@@ -111,14 +112,14 @@ public class TelaListar
                         } else if (escolha == 1) {
                             System.out.println("Digite o ano:");
                             ano = entrada.nextInt();
-                            cheio = iCatalogo.FiltrarPorAno(CatalogoSeries.getCatalogo().getSeries(), ano);
+                            cheio = iFiltrar.FiltrarPorAno(CatalogoSeries.getCatalogo().getSeries(), ano);
                             if (cheio == false)
                                 System.out.println("Não encontrado");
                         } else {
                             System.out.println("Digite a categoria:");
                             TelaMostrarCategorias.MostrarCategorias();
                             id_categoria = entrada.nextInt();
-                            cheio = iCatalogo.FiltrarPorCategoria(CatalogoSeries.getCatalogo().getSeries(), id_categoria);
+                            cheio = iFiltrar.FiltrarPorCategoria(CatalogoSeries.getCatalogo().getSeries(), id_categoria);
                             if (cheio == false)
                                 System.out.println("Não encontrado");
                         }
