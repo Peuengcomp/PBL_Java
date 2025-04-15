@@ -67,6 +67,7 @@ public class TelaListar
                         {
                             System.out.println("Digite a categoria:");
                             TelaMostrarCategorias.MostrarCategorias();
+                            System.out.println("Digite o ID da categoria:");
                             id_categoria = entrada.nextInt();
                             cheio = iFiltrar.FiltrarPorCategoria(CatalogoLivros.getCatalogo().getLivros(), id_categoria);
                             if (cheio == false)
