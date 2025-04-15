@@ -32,7 +32,7 @@ public class Filme extends MidiaAV
                 "\nRoteiro: " + this.roteiro +
                 "\nDuracao: " + this.duracao + "\nFoi visto em:" + this.data +
                 "\nAvaliacao: " + this.avaliacao +
-                "\nReview"+ this.review + "\n";
+                "\nReview: "+ this.review + "\n";
     }
 
     public ArrayList<String> getDirecao() {

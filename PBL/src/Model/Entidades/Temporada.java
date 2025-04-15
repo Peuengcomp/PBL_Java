@@ -28,7 +28,7 @@ public class Temporada
                 "\nQuantidade de episódios: " + this.qtd_epsidios +
                 "\nFoi finalizada em: " + this.data +
                 "\nAvaliacao: " + this.avaliacao +
-                "\nReview"+ this.review + "\n";
+                "\nReview: "+ this.review + "\n";
     }
 
     public int getId_temporada()
