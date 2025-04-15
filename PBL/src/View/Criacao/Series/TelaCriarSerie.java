@@ -17,6 +17,8 @@ public class TelaCriarSerie
         int qtd;
         System.out.println("Preencha as informações a seguir:");
 
+        entrada.nextLine();
+
         System.out.println("Título: ");
         String titulo = entrada.nextLine();
 
