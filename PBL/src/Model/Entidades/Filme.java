@@ -52,6 +52,16 @@ public class Filme extends MidiaAV
         return this.avaliacao;
     }
 
+    public String getReview()
+    {
+        return this.review;
+    }
+
+    public LocalDate getData()
+    {
+        return this.data;
+    }
+
     public void setDirecao(ArrayList<String> direcao) {
         this.direcao = direcao;
     }

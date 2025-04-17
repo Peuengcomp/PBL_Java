@@ -1,12 +1,12 @@
 package Testes.Unidades;
 
-import Model.Entidades.Categoria;
-import Model.Entidades.Livro;
+import Model.Entidades.*;
 import View.Principais.RepositorioCategorias;
 import org.junit.Before;
 import org.junit.Test;
 
 import java.time.LocalDate;
+import java.util.ArrayList;
 
 import static org.junit.Assert.*;
 
@@ -51,10 +51,6 @@ public class testesCriarObjetosMidia
     {
         // Este teste cria um objeto Livro e verifica se ele foi criado corretamente.
 
-        assertEquals(17, data_livro.getDayOfMonth());
-        assertEquals(4, data_livro.getMonthValue());
-        assertEquals(2025, data_livro.getYear());
-
         Livro livro = new Livro("Torto Arado", 2019, categoria_livro, "Um livro sobre tortos arados",
                 5, data_livro, "Itamar Vieira Júnior", "Leya", "9786580309313", false);
 
@@ -64,7 +60,7 @@ public class testesCriarObjetosMidia
 
         assertEquals("Torto Arado", livro.getTitulo());
         assertEquals(2019, livro.getAno());
-        assertEquals(livro.getCategoria(), categoria_livro);
+        assertEquals("Romance", livro.getCategoria().getGenero());
         assertEquals("Um livro sobre tortos arados", livro.getReview());
         assertEquals(5, livro.getAvaliacao());
         assertEquals(livro.getData(), data_livro);
@@ -73,5 +69,119 @@ public class testesCriarObjetosMidia
         assertEquals("9786580309313", livro.getISBN());
         assertEquals(false, livro.getTem_exemplar());
         assertEquals("Não", livro.exemplar());
+    }
+
+    @Test
+    public void CriarObjetoFilme()
+    {
+        // este teste cria um objeto Filme e verifica se ele foi criado corretamente.
+
+        ArrayList<String> elenco = new ArrayList<String>();
+        elenco.add("Marlon Brando");
+        elenco.add("Al Pacino");
+
+        ArrayList<String> direcao = new ArrayList<>();
+        direcao.add("Francis Ford Coppola");
+
+        ArrayList<String> roteiro = new ArrayList<>();
+        roteiro.add("Francis Ford Coppola");
+        roteiro.add("Mario Puzo");
+
+        Filme filme = new Filme("O Poderoso Chefão", 1972, categoria_filme,
+                "Filme empolgante sobre a máfia ítalo-americana", 4, data_filme, "The Godfather",
+                "Prime", 175, elenco, roteiro, direcao);
+
+        assertNotNull(filme);
+
+        assertEquals("O Poderoso Chefão", filme.getTitulo());
+        assertEquals(1972, filme.getAno());
+        assertEquals("Drama", filme.getCategoria().getGenero());
+        assertEquals("Filme empolgante sobre a máfia ítalo-americana", filme.getReview());
+        assertEquals(4, filme.getAvaliacao());
+        assertEquals(data_filme, filme.getData());
+        assertEquals("The Godfather", filme.getTitulo_original());
+        assertEquals("Prime", filme.getOnde_assistir());
+        assertEquals(175, filme.getDuracao());
+
+        for (String nome : filme.getElenco())
+        {
+            assertTrue(elenco.contains(nome));
+        }
+
+        for (String nome : filme.getDirecao())
+        {
+            assertTrue(direcao.contains(nome));
+        }
+
+        for (String nome : filme.getRoteiro())
+        {
+            assertTrue(roteiro.contains(nome));
+        }
+    }
+
+    @Test
+    public void CriarObjetoTemporada()
+    {
+        // Este teste cria um objeto Temporada e verifica se ele foi criado corretamente.
+
+        Temporada temporada = new Temporada(1, 2022, 22,
+                "Primeira Temporada", 5, data_serie);
+
+        assertNotNull(temporada);
+
+        assertEquals(1, temporada.getId_temporada());
+        assertEquals(2022, temporada.getAno());
+        assertEquals(22, temporada.getQtd_epsidios());
+        assertEquals("Primeira Temporada", temporada.getReview());
+        assertEquals(5, temporada.getAvaliacao());
+        assertEquals(data_serie, temporada.getData());
+    }
+
+    @Test
+    public void CriarObjetoSerie()
+    {
+        // Este teste cria um objeto Serie e verifica se ele foi criado corretamente.
+
+        // Como a avaliação da série é dada em função das temporadas, duas temporadas são criadas.
+
+        Temporada temporada1 = new Temporada(1, 2005, 22,
+                "Primeira Temporada", 5, data_serie);
+
+        Temporada temporada2 = new Temporada(2, 2006, 22,
+                "Segunda Temporada", 4, data_serie);
+
+        ArrayList<Temporada> temporadas = new ArrayList<>();
+        temporadas.add(temporada1);
+        temporadas.add(temporada2);
+
+        ArrayList<String> elenco = new ArrayList<>();
+        elenco.add("Jared Padalecki");
+        elenco.add("Jensen Ackles");
+
+
+        Serie serie = new Serie("Sobrenatural", 2005, categoria_serie,
+                "Supernatural", "Prime", elenco, 2020, temporadas);
+
+        assertNotNull(serie);
+
+        assertEquals("Sobrenatural", serie.getTitulo());
+        assertEquals(2005, serie.getAno());
+        assertEquals("Ação", categoria_serie.getGenero());
+        assertEquals("Supernatural", serie.getTitulo_original());
+        assertEquals("Prime", serie.getOnde_assistir());
+
+        for (String nome : serie.getElenco())
+        {
+            assertTrue(elenco.contains(nome));
+        }
+
+        assertEquals(2020, serie.getAno_de_encerramento());
+
+        for (Temporada temporada : temporadas)
+        {
+            assertTrue(serie.getTemporadas().contains(temporada));
+        }
+
+        assertEquals(4.5, serie.getAvaliacao(), 0.001);
     }
 }
