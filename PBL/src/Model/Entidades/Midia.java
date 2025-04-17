@@ -1,7 +1,5 @@
 package Model.Entidades;
 
-import java.time.LocalDate;
-
 public class Midia
 {
     private String titulo;
@@ -17,7 +15,7 @@ public class Midia
 
     public String toString()
     {
-        return "Titulo: " + this.titulo + "\nAno: " + this.ano + "\nCategoria: " + this.genero.getCategoria() + "\n";
+        return "Titulo: " + this.titulo + "\nAno: " + this.ano + "\nCategoria: " + this.genero.getGenero() + "\n";
     }
 
     public String getTitulo() {

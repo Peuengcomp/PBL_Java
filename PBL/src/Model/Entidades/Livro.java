@@ -109,7 +109,7 @@ public class Livro extends Midia
     public String exemplar()
     {
         if (getTem_exemplar())
-            return "Sim ";
+            return "Sim";
         else
             return "Não";
     }
