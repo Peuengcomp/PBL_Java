@@ -25,9 +25,9 @@ public class testesCriarObjetosMidia
         RepositorioCategorias.getInstancia();
         assertNotNull(RepositorioCategorias.getInstancia());
 
-        data_livro = LocalDate.of(2025, 4, 17);
-        data_filme = LocalDate.of(2025, 4, 17);
-        data_serie = LocalDate.of(2025, 4, 17);
+        data_livro = LocalDate.of(2025, 1, 15);
+        data_filme = LocalDate.of(2024, 2, 16);
+        data_serie = LocalDate.of(2023, 3, 17);
 
         assertNotNull(data_livro);
         assertNotNull(data_filme);
