@@ -84,5 +84,6 @@ public class TelaCriarFilme
         data.format(formatar);
 
         CriarFilme.CriarFilme(titulo, ano, categoria, titulo_original, duracao, onde_assistir, elenco, roteiro, direcao, review, avaliacao, data);
+        System.out.println("Filme criado com sucesso!");
     }
 }

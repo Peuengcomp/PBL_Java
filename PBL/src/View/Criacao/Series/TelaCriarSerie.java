@@ -59,6 +59,6 @@ public class TelaCriarSerie
 
         CriarSerie.criarSerie(titulo, ano, categoria, titulo_original, onde_assistir, elenco, ano_de_encerramento, temporadas);
 
-        System.out.println("Cadastro feito com sucesso!");
+        System.out.println("Série criada com sucesso!");;
     }
 }
