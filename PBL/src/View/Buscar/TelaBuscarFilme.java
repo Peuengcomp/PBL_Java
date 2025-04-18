@@ -26,6 +26,7 @@ public class TelaBuscarFilme
             System.out.println("6 - Voltar");
 
             opc = entrada.nextInt();
+            entrada.nextLine();
 
             switch (opc)
             {

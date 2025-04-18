@@ -22,6 +22,7 @@ public class TelaBuscarSerie {
             System.out.println("5 - Voltar");
 
             opc = entrada.nextInt();
+            entrada.nextLine();
 
             switch (opc) {
                 case 1:
@@ -32,7 +33,7 @@ public class TelaBuscarSerie {
                     if (serie != null)
                         System.out.println(serie.toString());
                     else
-                        System.out.println("Livro não encontrado!");
+                        System.out.println("Nenhuma serie encontrado!");
 
                     break;
 

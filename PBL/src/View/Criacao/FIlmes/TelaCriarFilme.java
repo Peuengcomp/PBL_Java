@@ -73,7 +73,7 @@ public class TelaCriarFilme
         System.out.println("dia: ");
         int dia = entrada.nextInt();
 
-        System.out.println("mẽs: ");
+        System.out.println("mês: ");
         int mes = entrada.nextInt();
 
         System.out.println("ano: ");

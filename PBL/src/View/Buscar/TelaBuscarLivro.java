@@ -39,7 +39,7 @@ public class TelaBuscarLivro
                     if (livro != null)
                         System.out.println(livro.toString());
                     else
-                        System.out.println("Livro não encontrado!");
+                        System.out.println("Nenhum livro encontrado!");
 
                     break;
 

@@ -26,7 +26,7 @@ public class TelaBuscar
                     TelaBuscarFilme.fazerTela(entrada);
                     break;
                 case 3:
-
+                    TelaBuscarSerie.fazerTela(entrada);
                     break;
                 case 4:
                     System.out.println("Voltando...");
