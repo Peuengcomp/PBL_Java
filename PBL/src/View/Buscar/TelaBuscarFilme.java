@@ -37,7 +37,7 @@ public class TelaBuscarFilme
                     if (filme != null)
                         System.out.println(filme.toString());
                     else
-                        System.out.println("Livro não encontrado!");
+                        System.out.println("Filme não encontrado!");
 
                     break;
 
@@ -50,7 +50,7 @@ public class TelaBuscarFilme
                     ArrayList<Filme> filmes = iBuscarMidia.buscarCategoria(id, CatalogoFilmes.getCatalogo().getFilmes());
 
                     if (filmes == null)
-                        System.out.println("Nenhum livro encontrado!");
+                        System.out.println("Nenhum filme encontrado!");
                     else
                         for (Filme f : filmes)
                         {
@@ -65,7 +65,7 @@ public class TelaBuscarFilme
                     ArrayList<Filme> filmes_ano = iBuscarMidia.buscarAno(ano, CatalogoFilmes.getCatalogo().getFilmes());
 
                     if (filmes_ano == null)
-                        System.out.println("Nenhum livro encontrado!");
+                        System.out.println("Nenhum filme encontrado!");
                     else
                         for (Filme f : filmes_ano)
                         {

@@ -13,7 +13,7 @@ public class TelaMenu
         int opc;
         do
         {
-            System.out.println("BEM VINDO AO DIÁRIO CULTURAL|");
+            System.out.println("BEM VINDO AO DIÁRIO CULTURAL!");
             System.out.println("1 - Criar Midia");
             System.out.println("2 - Buscar Midia");
             System.out.println("3 - Listar Midia");

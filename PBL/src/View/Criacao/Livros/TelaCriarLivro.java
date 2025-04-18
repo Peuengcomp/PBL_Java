@@ -53,13 +53,13 @@ public class TelaCriarLivro
 
         System.out.println("Preencha as informaçõe acerca da data de finalização de leitura do livro:");
 
-        System.out.println("dia:");
+        System.out.println("dia: ");
         int dia = entrada.nextInt();
 
-        System.out.println("mẽs");
+        System.out.println("mẽs: ");
         int mes = entrada.nextInt();
 
-        System.out.println("ano:");
+        System.out.println("ano: ");
         int ano_leitura = entrada.nextInt();
 
         LocalDate data = LocalDate.of(ano_leitura,mes,dia);

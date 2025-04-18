@@ -23,10 +23,10 @@ public class TelaBuscar
                     TelaBuscarLivro.fazerTela(entrada);
                     break;
                 case 2:
-                    System.out.println("Buscar Filme");
+                    TelaBuscarFilme.fazerTela(entrada);
                     break;
                 case 3:
-                    System.out.println("Buscar Série");
+
                     break;
                 case 4:
                     System.out.println("Voltando...");

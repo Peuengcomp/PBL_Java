@@ -28,13 +28,13 @@ public class TelaCriarTemporada
 
         System.out.println("Preencha as informaçõe acerca da data em que finalizou a temporada:");
 
-        System.out.println("dia:");
+        System.out.println("dia: ");
         int dia = entrada.nextInt();
 
-        System.out.println("mẽs");
+        System.out.println("mẽs: ");
         int mes = entrada.nextInt();
 
-        System.out.println("ano:");
+        System.out.println("ano: ");
         int ano_assistido = entrada.nextInt();
 
         LocalDate data = LocalDate.of(ano_assistido,mes,dia);
