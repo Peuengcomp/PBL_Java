@@ -22,6 +22,7 @@ public class TelaFiltrar
                     System.out.println("1 - Por Ano");
                     System.out.println("2 - Por Categoria");
 
+                    System.out.println("Digite a opção desejada:");
                     int escolha = entrada.nextInt();
 
                     if (escolha == 1)

@@ -33,7 +33,7 @@ public class TelaBuscarSerie {
                     if (serie != null)
                         System.out.println(serie.toString());
                     else
-                        System.out.println("Nenhuma serie encontrado!");
+                        System.out.println("Nenhuma série encontrada!");
 
                     break;
 
@@ -46,7 +46,7 @@ public class TelaBuscarSerie {
                     ArrayList<Serie> series = iBuscarMidia.buscarCategoria(id, CatalogoSeries.getCatalogo().getSeries());
 
                     if (series == null)
-                        System.out.println("Nenhuma serie encontrada!");
+                        System.out.println("Nenhuma série encontrada!");
                     else
                         for (Serie s : series) {
                             System.out.println(series.toString());

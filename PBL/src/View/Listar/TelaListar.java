@@ -34,6 +34,7 @@ public class TelaListar
                 System.out.println("1 - Ordem Crescente de Avaliação");
                 System.out.println("2 - Ordem Decrescente de Avaliação");
 
+                System.out.println("Digite a opção desejada:");
                 int escolha_ordem = entrada.nextInt();
 
                 if (escolha_ordem == 1)
@@ -102,7 +103,7 @@ public class TelaListar
                     }
                     break;
                 case 3:
-                    tem = CatalogoLivros.getCatalogo().ListarOrdenar(valor);
+                    tem = CatalogoSeries.getCatalogo().ListarOrdenar(valor);
                     if (tem == false)
                         continue;
                     else
