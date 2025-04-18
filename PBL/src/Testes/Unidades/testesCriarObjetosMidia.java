@@ -182,6 +182,6 @@ public class testesCriarObjetosMidia
             assertTrue(serie.getTemporadas().contains(temporada));
         }
 
-        assertEquals(4.5, serie.getAvaliacao(), 0.001);
+        assertEquals(4.5, serie.getAvaliacao(), 0.0001);
     }
 }
