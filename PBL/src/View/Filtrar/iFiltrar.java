@@ -1,4 +1,4 @@
-package Controller.Filtrar;
+package View.Filtrar;
 
 import Model.Entidades.Midia;
 

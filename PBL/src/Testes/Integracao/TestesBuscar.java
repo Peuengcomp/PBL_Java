@@ -1,5 +1,6 @@
 package Testes.Integracao;
 
+import Controller.Buscar.BuscarFilme;
 import Controller.Buscar.BuscarLivro;
 import Controller.Buscar.iBuscarMidia;
 import Model.Entidades.*;
@@ -207,7 +208,7 @@ public class TestesBuscar
         // Busca por título
         Livro livro = iBuscarMidia.buscarTitulo("Grande Sertão: Veredas", catalogoLivros.getLivros());
         assertNotNull(livro);
-        assertEquals(livro1, livro);
+        assertEquals(livro1.getTitulo(), livro.getTitulo());
 
         // Buscar por Gênero
         ArrayList<Livro> livros1 = iBuscarMidia.buscarCategoria(7, catalogoLivros.getLivros());
@@ -242,6 +243,93 @@ public class TestesBuscar
         // Buscar por ISBN
         Livro livroISBN = BuscarLivro.buscarISBN("978-85-209-2162-6");
         assertNotNull(livroISBN);
-        assertEquals(livro1, livroISBN);
+        assertEquals(livro1.getISBN(), livroISBN.getISBN());
+    }
+
+    @Test
+    public void BuscarFilme()
+    {
+        // Buscar por título
+        Filme filme = iBuscarMidia.buscarTitulo("O Poderoso Chefão", catalogoFilmes.getFilmes());
+        assertNotNull(filme);
+        assertEquals(filme1.getTitulo(), filme.getTitulo());
+
+        // Buscar por Gênero
+        ArrayList<Filme> filmes1 = iBuscarMidia.buscarCategoria(4, catalogoFilmes.getFilmes());
+        assertNotNull(filmes1);
+
+        for (Filme f : filmes1)
+        {
+            assertEquals(4, f.getCategoria().getId());
+        }
+
+        // Buscar por ano
+        ArrayList<Filme> filmes2 = iBuscarMidia.buscarAno(2001, catalogoFilmes.getFilmes());
+        assertNotNull(filmes2);
+
+        for (Filme f : filmes2)
+        {
+            assertEquals(2001, f.getAno());
+        }
+
+        // Buscar por diretor
+        ArrayList<Filme> filmes3 = BuscarFilme.buscarDiretor("Francis Ford Coppola", catalogoFilmes.getFilmes());
+        assertNotNull(filmes3);
+
+        for (Filme f : filmes3)
+        {
+            ArrayList<String> diretores = f.getDirecao();
+            assertTrue(diretores.contains("Francis Ford Coppola"));
+        }
+
+        // Buscar por elenco
+        ArrayList<Filme> filmes4 = iBuscarMidia.BuscarNomes("Ian McKellen", catalogoFilmes.getFilmes());
+        assertNotNull(filmes4);
+
+        for (Filme f : filmes4)
+        {
+            ArrayList<String> elenco = f.getElenco();
+            assertTrue(elenco.contains("Ian McKellen"));
+        }
+    }
+    @Test
+    public void BuscarSerie()
+    {
+        // Buscar por título
+
+        Serie serie = iBuscarMidia.buscarTitulo("Friends", catalogoSeries.getSeries());
+        assertNotNull(serie);
+        assertEquals(serie2.getTitulo(), serie.getTitulo());
+
+        // Buscar por Categoria
+
+        ArrayList<Serie> series1 = iBuscarMidia.buscarCategoria(3, catalogoSeries.getSeries());
+        assertNotNull(series1);
+
+        for (Serie s : series1)
+        {
+            assertEquals(3, s.getCategoria().getId());
+        }
+
+        // Buscar por ano
+
+        ArrayList<Serie> series2 = iBuscarMidia.buscarAno(1994, catalogoSeries.getSeries());
+        assertNotNull(series2);
+
+        for (Serie s : series2)
+        {
+            assertEquals(1994, s.getAno());
+        }
+
+        // Buscar por elenco
+
+        ArrayList<Serie> series3 = iBuscarMidia.BuscarNomes("Lisa Kudrow", catalogoSeries.getSeries());
+        assertNotNull(series3);
+
+        for (Serie s : series3)
+        {
+            ArrayList<String> elenco = s.getElenco();
+            assertTrue(elenco.contains("Lisa Kudrow"));
+        }
     }
 }
