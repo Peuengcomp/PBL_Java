@@ -2,6 +2,8 @@ package Model.Entidades;
 
 import java.util.ArrayList;
 
+// Esta classe representa a entidade série.
+
 public class Serie extends MidiaAV
 {
     private int ano_de_encerramento;

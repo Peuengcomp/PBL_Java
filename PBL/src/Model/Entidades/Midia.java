@@ -1,5 +1,7 @@
 package Model.Entidades;
 
+// Esta classe tem por finalidade representar uma midia, que é, neste problema uma superclasse de Midia AV e Livro
+
 public class Midia
 {
     private String titulo;

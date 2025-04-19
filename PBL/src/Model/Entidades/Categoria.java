@@ -1,5 +1,7 @@
 package Model.Entidades;
 
+// Esta classe tem por finalidade representar uma categoria
+
 public class Categoria
 {
     private int id;

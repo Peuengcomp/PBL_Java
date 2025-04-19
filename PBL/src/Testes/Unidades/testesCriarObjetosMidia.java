@@ -12,6 +12,8 @@ import static org.junit.Assert.*;
 
 public class testesCriarObjetosMidia
 {
+
+    // Defina-se antes as variáveis que serão utilizadas nos testes.
     private LocalDate data_livro;
     private LocalDate data_filme;
     private LocalDate data_serie;

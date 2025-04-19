@@ -7,6 +7,8 @@ import Model.Repositorios.CatalogoFilmes;
 import java.time.LocalDate;
 import java.util.ArrayList;
 
+// Esta classe tem como objetivo criar um filme e adicionar no catálogo.
+
 public class CriarFilme
 {
     public static void CriarFilme(String titulo, int ano, Categoria categoria, String titulo_original, int duracao,

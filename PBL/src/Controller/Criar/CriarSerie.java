@@ -7,6 +7,8 @@ import Model.Repositorios.CatalogoSeries;
 
 import java.util.ArrayList;
 
+// Esta classe tem por finalidade criar uma série e adicionar ao catálogo
+
 public class CriarSerie
 {
     public static void criarSerie(String titulo, int ano, Categoria categoria, String titulo_original,

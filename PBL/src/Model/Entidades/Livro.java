@@ -2,6 +2,8 @@ package Model.Entidades;
 
 import java.time.LocalDate;
 
+// Esta classe tem por finalidade representar um livro
+
 public class Livro extends Midia
 {
     private String autor;

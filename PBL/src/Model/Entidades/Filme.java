@@ -3,6 +3,8 @@ package Model.Entidades;
 import java.time.LocalDate;
 import java.util.ArrayList;
 
+// Esta classe tem por finalidade representar um filme.
+
 public class Filme extends MidiaAV
 {
     private ArrayList<String> direcao;

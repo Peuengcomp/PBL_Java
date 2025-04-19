@@ -5,6 +5,9 @@ import Model.Repositorios.CatalogoLivros;
 
 import java.util.ArrayList;
 
+// Esta classe tem por finalidade buscar um livro pelo seu autor ou ISBN.
+// Utiliza-se um processo de iteração para realizar a busca.
+
 public class BuscarLivro
 {
     public static ArrayList<Livro> buscarAutor(String autor)

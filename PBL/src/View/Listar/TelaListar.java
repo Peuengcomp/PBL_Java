@@ -4,7 +4,6 @@ import Controller.Filtrar.iFiltrar;
 import Model.Repositorios.CatalogoFilmes;
 import Model.Repositorios.CatalogoLivros;
 import Model.Repositorios.CatalogoSeries;
-import Model.Repositorios.iCatalogo;
 import View.Principais.TelaMostrarCategorias;
 
 import java.util.Scanner;

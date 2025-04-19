@@ -5,7 +5,7 @@ import View.Principais.RepositorioCategorias;
 import org.junit.Test;
 import static org.junit.Assert.*;
 
-public class TestesUnidadesCategoriasRepositorios
+public class TestesCategoriasRepositorios
 {
     @Test
     public void CriarCategoriaTeste()

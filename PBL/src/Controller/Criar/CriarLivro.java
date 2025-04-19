@@ -6,6 +6,8 @@ import Model.Repositorios.CatalogoLivros;
 
 import java.time.LocalDate;
 
+// Esta classe tem por finalidade criar um livro e adicionar ao catálogo
+
 public class CriarLivro
 {
     public static void criarLivro(String titulo, int ano, Categoria categoria,

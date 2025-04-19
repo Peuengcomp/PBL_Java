@@ -5,6 +5,9 @@ import Model.Entidades.MidiaAV;
 
 import java.util.ArrayList;
 
+// Esta classe utiliza-se o tipo genérico T que herda de Midia para realizar a busca.
+// Os processos de busca se dão por meio de iteração com a utilização de um loop for.
+
 public interface iBuscarMidia
 {
     static <T extends Midia> T buscarTitulo(String titulo, ArrayList<T> lista)

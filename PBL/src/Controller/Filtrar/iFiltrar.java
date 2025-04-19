@@ -4,6 +4,9 @@ import Model.Entidades.Midia;
 
 import java.util.ArrayList;
 
+// Esta interface tem por finalidade filtrar uma lista de objetos de uma determinada classe.
+// Usa-se o tipo genérico T que herda de Midia para realizar a filtragem.
+
 public interface iFiltrar<T>
 {
     static <T extends Midia> boolean FiltrarPorAno(ArrayList<T> lista, int ano)

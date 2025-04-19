@@ -1,7 +1,8 @@
 package Model.Entidades;
 
-import java.time.LocalDate;
 import java.util.ArrayList;
+
+// Esta classe tem por finalidade descrever a superclasse Midia AV, que irá prover herança para filmes e séries.
 
 public class MidiaAV extends Midia
 {
